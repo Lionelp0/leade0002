@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>APPFLIX</title>
+<link crossorigin='anonymous' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css' integrity='sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==' referrerpolicy='no-referrer' rel='stylesheet'/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+
+<style>@import url(https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;600&display=swap);*{-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent}*{list-style:none;margin:0;padding:0;box-sizing:border-box;color:#fff;font-family:"Source Sans Pro",sans-serif;text-decoration:none}:root{--main:#e21221}body{background:#181a20;font-family:"Source Sans Pro",sans-serif}.app-header{height:33vh;position:relative;display:flex;justify-content:center;align-items:flex-end;padding:15px}.app-header__bg{position:absolute;top:0;left:0;display:block;width:100%;height:100%;background:#000;z-index:-1;opacity:.9}.app-info{padding:20px}.app-info__mini-data{margin:10px 0}.btn-info i{color:var(--main);margin-right:7px}.btn-info{color:var(--main);display:inline-block;padding:5px 10px;margin-right:10px;font-weight:600;border:2px solid var(--main);border-radius:8px}.genres{margin:20px 0}.cast{margin:20px 0}.cast-min__container{aspect-ratio:1 / 1;background:#111215;border-radius:100%;overflow:hidden}.cast__min{width:100%;aspect-ratio:1 / 1;object-fit:cover}.swiper-slide{display:grid;grid-gap:15px;grid-template-columns:40% 60%;align-items:flex-start}.lista-episodios{padding:20px}.select-season{display:flex;align-items:center;margin-bottom:30px;position:relative;justify-content:space-between}.select-season select{background:rgb(48,48,48);outline:none;border:none;padding:10px 20px;font-size:20px;font-weight:600;border-radius:5px;border-right:20px solid transparent}.caps-grid{opacity:0;transition:opacity .4s ease;overflow:hidden}.caps-grid.animation{opacity:1;animation:fade 1s ease}@keyframes fade{0%{opacity:0}100%{opacity:1}}.hide{display:none}#temps{position:relative}.episode{display:grid;grid-gap:20px;grid-template-columns:.4fr .6fr}.episode__img{aspect-ratio:3 / 2;background:#111215;border-radius:4px;overflow:hidden}.episode__img img{width:100%;aspect-ratio:3 / 2;object-fit:cover}.episode__info__title{font-size:20px;margin-bottom:3px}.episode__info__duration{opacity:.7;font-weight:600}.caps-grid li{margin-bottom:20px}@media screen and (min-width:768px){.caps-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-gap:20px}.episode{display:flex;flex-direction:column;text-align:center}.hide{display:none}}
+.iframe-box{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);width:100%;height:100%;z-index:9999;background:rgb(0,0,0,.9);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;display:none}#cerrar{cursor:pointer}.fa-xmark{font-size:50px}#lightbox{aspect-ratio:16 / 9;width:100%;display:flex;flex-direction:column;align-items:flex-end}#lightbox-content{position:relative;overflow:hidden;width:100%;padding-top:36.25%;aspect-ratio:16 / 9}.responsive-iframe{position:absolute;top:0;left:0;bottom:0;right:0;width:100%;aspect-ratio:16 / 9;z-index:9999}@media screen and (min-width:1000px){#lightbox{width:80%}}*{-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent}</style>
+</head>
+<body>
+
+<div class="app-header">
+<div class="app-header__bg" style="background: url('https://image.tmdb.org/t/p/w500//jlcJMuYl1OYyyxxnZeghIytSbdO.jpg') no-repeat center center / cover;"></div>
+</div>
+
+<div class="app-info"><h1 class="app__info__title">In the Land of Leadale</h1><ul class="app-info__mini-data"><li class="rate btn-info"><i class="fa-solid fa-star"></i>6.8</li><li class="year btn-info">2022</li><li class="btn-info">1 Temporada</li></ul><p class="genres">Género: Animación, Sci-Fi & Fantasy, Action & Adventure, Comedia</p><p class="sinopsis">Debido a un terrible accidente, Keina Kagami se ve obligada a vivir con soporte vital para poder sobrevivir. La única forma que tiene de liberarse es dentro del VRMMORPG "Leadale". Un día, su soporte vital deja de funcionar y Keina pierde la vida. Pero cuando se despierta, se encuentra en el mundo de Leadale 200 años en el futuro. Ahora es la medio-elfa Cayna, que posee habilidades y estatus de OP perdidos y se acerca a los demás habitantes de este mundo. Pero entre esos habitantes resultan estar los "niños" que ella hizo en la creación del personaje...</p><div class="cast"><div class="swiper mySwiper"><ul class="swiper-wrapper app-info__cast"><li class="swiper-slide"><div class="cast-min__container"><img src="https://image.tmdb.org/t/p/w500//s8CV9MwufZAI97losqZscF81T7y.jpg" onerror="this.src='https://image.tmdb.org/t/p/w500//jlcJMuYl1OYyyxxnZeghIytSbdO.jpg';" alt="cast" class="cast__min"></div><div class="cast__info"><h5 class="cast__name">Eri Yukimura</h5><h6>Cayna (voice)</h6></div></li><li class="swiper-slide"><div class="cast-min__container"><img src="https://image.tmdb.org/t/p/w500//rCo5Q3xMnOFMavs6YJAbP2ZRsqt.jpg" onerror="this.src='https://image.tmdb.org/t/p/w500//jlcJMuYl1OYyyxxnZeghIytSbdO.jpg';" alt="cast" class="cast__min"></div><div class="cast__info"><h5 class="cast__name">Daisuke Ono</h5><h6>Skargo (voice)</h6></div></li><li class="swiper-slide"><div class="cast-min__container"><img src="https://image.tmdb.org/t/p/w500//zTydHbhNjpwoCydvrJAd3d64C3g.jpg" onerror="this.src='https://image.tmdb.org/t/p/w500//jlcJMuYl1OYyyxxnZeghIytSbdO.jpg';" alt="cast" class="cast__min"></div><div class="cast__info"><h5 class="cast__name">Kaori Nazuka</h5><h6>Mai-Mai (voice)</h6></div></li><li class="swiper-slide"><div class="cast-min__container"><img src="https://image.tmdb.org/t/p/w500//cv5zuPZySNsHXu24pjKLYCRzJ2J.jpg" onerror="this.src='https://image.tmdb.org/t/p/w500//jlcJMuYl1OYyyxxnZeghIytSbdO.jpg';" alt="cast" class="cast__min"></div><div class="cast__info"><h5 class="cast__name">Tomokazu Sugita</h5><h6>Kartatz (voice)</h6></div></li><li class="swiper-slide"><div class="cast-min__container"><img src="https://image.tmdb.org/t/p/w500//3r8IoaGd1rtdMEZCwfHUsDZkiLk.jpg" onerror="this.src='https://image.tmdb.org/t/p/w500//jlcJMuYl1OYyyxxnZeghIytSbdO.jpg';" alt="cast" class="cast__min"></div><div class="cast__info"><h5 class="cast__name">Yui Otagiri</h5><h6>Kee (voice)</h6></div></li><li class="swiper-slide"><div class="cast-min__container"><img src="https://image.tmdb.org/t/p/w500//tbkUdMPu2xEEYaHix5aP0AGCqJP.jpg" onerror="this.src='https://image.tmdb.org/t/p/w500//jlcJMuYl1OYyyxxnZeghIytSbdO.jpg';" alt="cast" class="cast__min"></div><div class="cast__info"><h5 class="cast__name">Kanako Yanagihara</h5><h6>Lytt (voice)</h6></div></li><li class="swiper-slide"><div class="cast-min__container"><img src="https://image.tmdb.org/t/p/w500//k38ACSJ2NJDcjWLLSQKJtaWGtiX.jpg" onerror="this.src='https://image.tmdb.org/t/p/w500//jlcJMuYl1OYyyxxnZeghIytSbdO.jpg';" alt="cast" class="cast__min"></div><div class="cast__info"><h5 class="cast__name">Sakura Nakamura</h5><h6>Marelle (voice)</h6></div></li><li class="swiper-slide"><div class="cast-min__container"><img src="https://image.tmdb.org/t/p/w500//yra7e6022oirTycLmWCSOAKiMw2.jpg" onerror="this.src='https://image.tmdb.org/t/p/w500//jlcJMuYl1OYyyxxnZeghIytSbdO.jpg';" alt="cast" class="cast__min"></div><div class="cast__info"><h5 class="cast__name">Yuuki Hirose</h5><h6>Luine (voice)</h6></div></li><li class="swiper-slide"><div class="cast-min__container"><img src="https://image.tmdb.org/t/p/w500//2VgXgV6rdFPI4QctgJP5qWhHT4x.jpg" onerror="this.src='https://image.tmdb.org/t/p/w500//jlcJMuYl1OYyyxxnZeghIytSbdO.jpg';" alt="cast" class="cast__min"></div><div class="cast__info"><h5 class="cast__name">Azusa Tadokoro</h5><h6>Caerina (voice)</h6></div></li><li class="swiper-slide"><div class="cast-min__container"><img src="https://image.tmdb.org/t/p/w500//6rX6DUUSrk5dxavWa8GZl2ASYRV.jpg" onerror="this.src='https://image.tmdb.org/t/p/w500//jlcJMuYl1OYyyxxnZeghIytSbdO.jpg';" alt="cast" class="cast__min"></div><div class="cast__info"><h5 class="cast__name">Tomoya Takagi</h5><h6>Caerick (voice)</h6></div></li></ul></div></div></div>
+
+<div class="lista-episodios">
+<div class="select-season">
+<h2>Episodios</h2>
+<select name="" id="select-season">
+<option value="1">Temporada 1</option>
+
+</select>
+</div>
+
+<!--================================== SEASONS SECTION ==================================-->
+
+<div id="temps">
+
+<ul class="caps-grid animation" id="season-1">
+
+<li>
+<a href="#!" class="episode" data-url="https://www.youtube.com/embed/yBm4K00SMEk">
+<div class="episode__img">
+<img src="https://image.tmdb.org/t/p/w500//5gEzRfq9cjLNhyLgqIZhy6FeYGr.jpg" onerror="this.src='https://i.ibb.co/kxfbQ6p/default.jpg';">
+</div>
+<div class="epsiode__info">
+<h4 class="episode__info__title">1. Episodio 1</h4>
+<div class="episode__info__duration">24m</div>
+</div>
+</a>
+</li>
+
+<li>
+<a href="#!" class="episode" data-url="https://www.youtube.com/embed/yBm4K00SMEk">
+<div class="episode__img">
+<img src="https://image.tmdb.org/t/p/w500//9RMMh99g9XLl9gWmD1z0HmBz5tA.jpg" onerror="this.src='https://i.ibb.co/kxfbQ6p/default.jpg';">
+</div>
+<div class="epsiode__info">
+<h4 class="episode__info__title">2. Episodio 2</h4>
+<div class="episode__info__duration">24m</div>
+</div>
+</a>
+</li>
+
+<li>
+<a href="#!" class="episode" data-url="https://www.youtube.com/embed/yBm4K00SMEk">
+<div class="episode__img">
+<img src="https://image.tmdb.org/t/p/w500//gJ2AmVRLmB7OjZHxXB9usrEgaZY.jpg" onerror="this.src='https://i.ibb.co/kxfbQ6p/default.jpg';">
+</div>
+<div class="epsiode__info">
+<h4 class="episode__info__title">3. Episodio 3</h4>
+<div class="episode__info__duration">24m</div>
+</div>
+</a>
+</li>
+
+<li>
+<a href="#!" class="episode" data-url="https://www.youtube.com/embed/yBm4K00SMEk">
+<div class="episode__img">
+<img src="https://image.tmdb.org/t/p/w500//aM06H8qY6YymjxpDQuzkPz4ecJZ.jpg" onerror="this.src='https://i.ibb.co/kxfbQ6p/default.jpg';">
+</div>
+<div class="epsiode__info">
+<h4 class="episode__info__title">4. Episodio 4</h4>
+<div class="episode__info__duration">24m</div>
+</div>
+</a>
+</li>
+
+<li>
+<a href="#!" class="episode" data-url="https://www.youtube.com/embed/yBm4K00SMEk">
+<div class="episode__img">
+<img src="https://image.tmdb.org/t/p/w500//rFal0Vayh7V6mdeHHGAKpbNHyNI.jpg" onerror="this.src='https://i.ibb.co/kxfbQ6p/default.jpg';">
+</div>
+<div class="epsiode__info">
+<h4 class="episode__info__title">5. Episodio 5</h4>
+<div class="episode__info__duration">24m</div>
+</div>
+</a>
+</li>
+
+<li>
+<a href="#!" class="episode" data-url="https://www.youtube.com/embed/yBm4K00SMEk">
+<div class="episode__img">
+<img src="https://image.tmdb.org/t/p/w500//pPJoepX0L1ktzBAbnICnE3kerjH.jpg" onerror="this.src='https://i.ibb.co/kxfbQ6p/default.jpg';">
+</div>
+<div class="epsiode__info">
+<h4 class="episode__info__title">6. Episodio 6</h4>
+<div class="episode__info__duration">24m</div>
+</div>
+</a>
+</li>
+
+<li>
+<a href="#!" class="episode" data-url="https://www.youtube.com/embed/yBm4K00SMEk">
+<div class="episode__img">
+<img src="https://image.tmdb.org/t/p/w500//3wgLyYdnAx6r8OyFVHVifT3lsAY.jpg" onerror="this.src='https://i.ibb.co/kxfbQ6p/default.jpg';">
+</div>
+<div class="epsiode__info">
+<h4 class="episode__info__title">7. Episodio 7</h4>
+<div class="episode__info__duration">24m</div>
+</div>
+</a>
+</li>
+
+<li>
+<a href="#!" class="episode" data-url="https://www.youtube.com/embed/yBm4K00SMEk">
+<div class="episode__img">
+<img src="https://image.tmdb.org/t/p/w500//6A4B939V5HaP5blaM1LFGkXgabO.jpg" onerror="this.src='https://i.ibb.co/kxfbQ6p/default.jpg';">
+</div>
+<div class="epsiode__info">
+<h4 class="episode__info__title">8. Episodio 8</h4>
+<div class="episode__info__duration">24m</div>
+</div>
+</a>
+</li>
+
+<li>
+<a href="#!" class="episode" data-url="https://www.youtube.com/embed/yBm4K00SMEk">
+<div class="episode__img">
+<img src="https://image.tmdb.org/t/p/w500//hA2UlZdzHAks6GLb92sS769FBDm.jpg" onerror="this.src='https://i.ibb.co/kxfbQ6p/default.jpg';">
+</div>
+<div class="epsiode__info">
+<h4 class="episode__info__title">9. Episodio 9</h4>
+<div class="episode__info__duration">24m</div>
+</div>
+</a>
+</li>
+
+<li>
+<a href="#!" class="episode" data-url="https://www.youtube.com/embed/yBm4K00SMEk">
+<div class="episode__img">
+<img src="https://image.tmdb.org/t/p/w500//zoGZ3KKBTpgNOsZZYaySJm4bk3R.jpg" onerror="this.src='https://i.ibb.co/kxfbQ6p/default.jpg';">
+</div>
+<div class="epsiode__info">
+<h4 class="episode__info__title">10. Episodio 10</h4>
+<div class="episode__info__duration">24m</div>
+</div>
+</a>
+</li>
+
+<li>
+<a href="#!" class="episode" data-url="https://www.youtube.com/embed/yBm4K00SMEk">
+<div class="episode__img">
+<img src="https://image.tmdb.org/t/p/w500//36YvL9MsQNrjbppe7HZ3JyBsjCU.jpg" onerror="this.src='https://i.ibb.co/kxfbQ6p/default.jpg';">
+</div>
+<div class="epsiode__info">
+<h4 class="episode__info__title">11. Episodio 11</h4>
+<div class="episode__info__duration">24m</div>
+</div>
+</a>
+</li>
+
+<li>
+<a href="#!" class="episode" data-url="https://www.youtube.com/embed/yBm4K00SMEk">
+<div class="episode__img">
+<img src="https://image.tmdb.org/t/p/w500//bdv3asU36lZ3JccnNqLbpAp8tda.jpg" onerror="this.src='https://i.ibb.co/kxfbQ6p/default.jpg';">
+</div>
+<div class="epsiode__info">
+<h4 class="episode__info__title">12. Episodio 12</h4>
+<div class="episode__info__duration">24m</div>
+</div>
+</a>
+</li>
+
+</ul>
+
+
+
+</div>
+
+</div>
+
+<!-- REPRODUCTOR -->
+<div class="iframe-box" id="iframe-box">
+<div id="lightbox">
+<div id="cerrar"><i class="fa-solid fa-xmark"></i></div>
+<div id="lightbox-content">
+<iframe class="responsive-iframe" id="video" src="" sandbox="allow-same-origin allow-scripts" scrolling="no" style=" border-radius:5px;" frameborder="0" allowfullscreen></iframe>
+</div>
+</div>
+</div>
+
+<!-- SLIDERS CONFIG-->
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+<script>
+var swiper=new Swiper(".mySwiper",{slidesPerView:2,spaceBetween:40,freeMode:!0,breakpoints:{640:{slidesPerView:3},768:{slidesPerView:4,spaceBetween:15},1024:{slidesPerView:5}}})
+
+</script>
+
+<!-- TEMPORADAS -->
+<script>
+const selectorTempos=document.getElementById("select-season"),temps=document.getElementById("temps");selectorTempos.addEventListener("change",()=>{let b=`season-${selectorTempos.value}`,a=document.getElementById(`${b}`);temps.querySelectorAll("ul").forEach(a=>{a.classList.add("hide"),a.classList.remove("animation")}),a.classList.remove("hide"),a.classList.add("animation")})
+let cerrar=document.getElementById("cerrar"),iframeBox=document.getElementById("iframe-box"),temporadas=document.getElementById("temps"),iframe=document.getElementById("video");cerrar.addEventListener("click",()=>{iframe.removeAttribute("src"),iframeBox.style.display="none"});let eachEpisode=temporadas.querySelectorAll("li");eachEpisode.forEach(a=>{a.addEventListener("click",b=>{b.preventDefault(),iframeBox.style.display="flex";let c=a.querySelector("a").getAttribute("data-url");iframe.setAttribute("src",c)})})
+
+</script>
+</body>
+</html>
